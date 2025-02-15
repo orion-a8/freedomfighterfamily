@@ -11,22 +11,56 @@
     <h1>उत्तराधिकारी रजिस्ट्रेशन</h1>
 
     <form id="registrationForm">
-        <label>पूरा नाम:</label>
+        <label for="name">नाम:</label>
         <input type="text" id="name" required>
 
-        <label>मोबाइल नंबर:</label>
-        <input type="tel" id="mobile" required>
+        <label for="freedomFighterName">स्वतंत्रता सेनानी का नाम:</label>
+        <input type="text" id="freedomFighterName" list="fighterList">
+        <datalist id="fighterList">
+            <!-- Google Sheets से डेटा लोड होगा -->
+        </datalist>
 
-        <label>स्वतंत्रता सेनानी का नाम:</label>
-        <input type="text" id="freedomFighterName" required>
+        <label><input type="checkbox" id="newFighterCheckbox"> यदि स्वतंत्रता सेनानी सूची में नहीं है, तो जोड़ें</label>
+        <input type="text" id="newFighter" placeholder="नए सेनानी का नाम" disabled>
 
-        <label>संबंध:</label>
+        <label for="relation">स्वतंत्रता सेनानी संबंध:</label>
         <select id="relation">
             <option value="पुत्र">पुत्र</option>
             <option value="पुत्री">पुत्री</option>
             <option value="पोता">पोता</option>
             <option value="पोती">पोती</option>
+            <option value="नाती">नाती</option>
+            <option value="नातिन">नातिन</option>
+            <option value="पंती">पंती</option>
+            <option value="पंतन">पंतन</option>
+            <option value="पुत्र वधु">पुत्र वधु</option>
         </select>
+
+        <label for="mobile">मोबाइल नंबर:</label>
+        <input type="tel" id="mobile" required>
+
+        <label for="state">राज्य:</label>
+        <select id="state" onchange="populateSambhag()">
+            <option value="अन्य">अन्य</option>
+            <option value="मध्य प्रदेश">मध्य प्रदेश</option>
+            <option value="उत्तर प्रदेश">उत्तर प्रदेश</option>
+        </select>
+
+        <label for="sambhag">संभाग (यदि राज्य = मध्य प्रदेश)</label>
+        <select id="sambhag" onchange="populateJila()">
+            <option value="">चुनें</option>
+        </select>
+
+        <label for="jila">जिला:</label>
+        <select id="jila">
+            <option value="">चुनें</option>
+        </select>
+
+        <label for="address">पता:</label>
+        <textarea id="address" required></textarea>
+
+        <label for="extraInfo">अन्य जानकारी / पहचान नंबर:</label>
+        <input type="text" id="extraInfo">
 
         <button type="submit">रजिस्टर करें</button>
     </form>
