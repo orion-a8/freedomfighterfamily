@@ -2,8 +2,8 @@ async function sendDataToGoogleSheets() {
     const scriptURL = "https://script.google.com/macros/s/AKfycbx96_adl7FoalwDbU-eKuzp5g9X2CkD5U92oj5rBQvkj0KE2Gywk-AfhUbA1ymW6_dN8Q/exec"; // 🔴 यहाँ नया Deploy किया गया URL डालें।
 
     const formData = {
-        name_user: document.getElementById("name").value,
-        mobile_user: document.getElementById("mobile").value
+        name_user: document.getElementById("name_user").value,
+        mobile_user: document.getElementById("mobile_user").value
     };
 
     try {
