@@ -29,6 +29,17 @@ async function loadFreedomFightersByDistrict(selectedDistrict) {
     }
 }
 
+
+
+document.getElementById("freedomFighterName").addEventListener("change", function() {
+    const newFighterSection = document.getElementById("newFighterSection");
+    if (this.value === "नया सेनानी जोड़ें") {
+        newFighterSection.style.display = "block";
+    } else {
+        newFighterSection.style.display = "none";
+    }
+});
+
 // Google Sheets से स्वतंत्रता सेनानी की सूची लोड करें
 const sheetID = "1fzPJ2Vr_oHww9f-iYLfMI0ztKvFBjpL8FiAoPqwxh0Q";
 const sheetName = "familydata";
@@ -89,8 +100,8 @@ function populateJila() {
         'चंबल संभाग': ['मुरैना', 'भिण्ड', 'श्योपुर'],
         'जबलपुर संभाग': ['जबलपुर', 'कटनी', 'नरसिंहपुर', 'सिवनी', 'छिंदवाड़ा', 'बालाघाट', 'मंडला', 'डिंडौरी'],
         'नर्मदापुरम संभाग': ['नर्मदापुरम', 'हरदा', 'बैतूल'],
-        'भोपाल संभाग': ['भोपाल', 'रायसेन', 'राजगढ़', 'सीहोर', 'विदिशा',],
-        'रीवा संभाग': ['रीवा', 'सतना', 'सीधी', 'सिंगरौली', 'मऊगंज' , 'मैहर'],
+        'भोपाल संभाग': ['भोपाल', 'रायसेन', 'राजगढ़', 'सीहोर', 'विदिशा'],
+        'रीवा संभाग': ['रीवा', 'सतना', 'सीधी', 'सिंगरौली', 'मऊगंज' , 'मैहर' ],
         'शहडोल संभाग': ['अनूपपुर', 'उमरिया', 'शहडोल']
     };
 
