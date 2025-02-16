@@ -14,7 +14,7 @@ async function loadFreedomFightersByDistrict(selectedDistrict) {
         let uniqueFighters = new Set();
 
         data.values.slice(1).forEach(row => {
-            const fighterDistrict = row[7]; // सेनानी का जिला (Assuming it's in the 3rd column)
+            const fighterDistrict = row[6]; // सेनानी का जिला (Assuming it's in the 3rd column)
             if (fighterDistrict === selectedDistrict) {
                 uniqueFighters.add(row[1]); // सेनानी का नाम (2nd column)
             }
