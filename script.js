@@ -5,7 +5,7 @@ document.getElementById("newFighterCheckbox").addEventListener("change", functio
 // स्वतंत्रता सेनानी की लिस्ट लोड करें (Google Sheets से डेटा लाने के लिए)
 const sheetID = "1fzPJ2Vr_oHww9f-iYLfMI0ztKvFBjpL8FiAoPqwxh0Q";
 const sheetName = "familydata";
-const apiKey = "YOUR_GOOGLE_API_KEY"; 
+const apiKey = "AIzaSyDJhgzVded82rg_BCBSlAhtsGdF0QQ_6fI"; 
 
 const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${sheetName}?key=${apiKey}`;
 
