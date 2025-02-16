@@ -11,18 +11,39 @@
     <h1>उत्तराधिकारी रजिस्ट्रेशन</h1>
 
     <form id="registrationForm">
-        <label for="name">नाम:</label>
-        <input type="text" id="name" required>
+        <!-- राज्य चयन -->
+        <label for="state">राज्य:</label>
+        <select id="state" onchange="populateSambhag()">
+            <option value="">राज्य चुनें</option>
+            <option value="मध्य प्रदेश">मध्य प्रदेश</option>
+            <option value="उत्तर प्रदेश">उत्तर प्रदेश</option>
+        </select>
 
-        <label for="freedomFighterName">स्वतंत्रता सेनानी का नाम:</label>
-        <input type="text" id="freedomFighterName" list="fighterList">
-        <datalist id="fighterList">
-            <!-- Google Sheets से डेटा लोड होगा -->
-        </datalist>
+        <!-- संभाग चयन (केवल मध्य प्रदेश के लिए) -->
+        <label for="sambhag">संभाग:</label>
+        <select id="sambhag" onchange="populateJila()">
+            <option value="">संभाग चुनें</option>
+        </select>
 
-        <label><input type="checkbox" id="newFighterCheckbox"> यदि स्वतंत्रता सेनानी सूची में नहीं है, तो जोड़ें</label>
-        <input type="text" id="newFighter" placeholder="नए सेनानी का नाम" disabled>
+        <!-- जिला चयन -->
+        <label for="jila">जिला:</label>
+        <select id="jila">
+            <option value="">जिला चुनें</option>
+        </select>
 
+        <!-- स्वतंत्रता सेनानी चयन -->
+        <label for="freedomFighterName">स्वतंत्रता सेनानी:</label>
+        <select id="freedomFighterName">
+            <option value="नया सेनानी जोड़ें">🆕 स्वतंत्रता सेनानी जोड़ें</option>
+        </select>
+
+        <!-- यदि नया सेनानी जोड़ना है तो यह फील्ड दिखेगा -->
+        <div id="newFighterSection" style="display: none;">
+            <label for="newFighter">स्वतंत्रता सेनानी का नाम:</label>
+            <input type="text" id="newFighter">
+        </div>
+
+        <!-- संबंध चयन -->
         <label for="relation">स्वतंत्रता सेनानी संबंध:</label>
         <select id="relation">
             <option value="पुत्र">पुत्र</option>
@@ -34,27 +55,15 @@
             <option value="पंती">पंती</option>
             <option value="पंतन">पंतन</option>
             <option value="पुत्र वधु">पुत्र वधु</option>
+            <option value="प्रपौत्र वधू">प्रपौत्र वधू</option>
         </select>
+
+        <!-- अन्य विवरण -->
+        <label for="name">नाम:</label>
+        <input type="text" id="name" required>
 
         <label for="mobile">मोबाइल नंबर:</label>
         <input type="tel" id="mobile" required>
-
-        <label for="state">राज्य:</label>
-        <select id="state" onchange="populateSambhag()">
-            <option value="अन्य">अन्य</option>
-            <option value="मध्य प्रदेश">मध्य प्रदेश</option>
-            <option value="उत्तर प्रदेश">उत्तर प्रदेश</option>
-        </select>
-
-        <label for="sambhag">संभाग (यदि राज्य = मध्य प्रदेश)</label>
-        <select id="sambhag" onchange="populateJila()">
-            <option value="">चुनें</option>
-        </select>
-
-        <label for="jila">जिला:</label>
-        <select id="jila">
-            <option value="">चुनें</option>
-        </select>
 
         <label for="address">पता:</label>
         <textarea id="address" required></textarea>
